@@ -5,6 +5,6 @@ import numpy as np
 - ...
 """
 
-def match_paintings(imgs, db_imgs): 
+def painting_matching(imgs, db_imgs): 
     """ Obtain  from image """
     return list(range(len(imgs)))

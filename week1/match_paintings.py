@@ -2,7 +2,7 @@ import argparse
 from io_utils import *
 from os import path
 from background_mask import *
-from match_paintings import *
+from match_methods import *
 
 def parse_input_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -26,7 +26,7 @@ def match_paintings(args):
     # Obtain painting region from images
     masked_regions = bg_mask(db_imgs) # TODO
     # Perform painting matching
-    assignments = match_paintings(qs_imgs, db_imgs) # TODO
+    assignments = painting_matching(qs_imgs, db_imgs) # TODO
 
     # If query set annotations are available, evaluate 
     # TODO: Implement in evaluation.py
