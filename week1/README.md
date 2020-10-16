@@ -22,9 +22,9 @@ CBHC and onedcelled will only work if there is no masking method or CBHS is sele
 ## Notes
  - The folder should contain the database folder aswell as the query set. \
     e.g., \
-    -db_folder \ (<- <path_to_db> parameter (absolute path))
-    -- BBDD \ (<- <db_folder_name> parameter (relative path with respect to db_folder -> it is only necessary to indicate the folder name))
-    -- qsd1_w1 (<- <query_set_folder_name> parameter (relative path with respect to db_folder -> it is only necessary to indicate the folder name))
+    -db_folder (<- <path_to_db> parameter (absolute path)) \
+    -- BBDD (<- <db_folder_name> parameter (relative path with respect to db_folder -> it is only necessary to indicate the folder name)) \
+    -- qsd1_w1 (<- <query_set_folder_name> parameter (relative path with respect to db_folder -> it is only necessary to indicate the folder name)) \
 
 Method reference list:
 - CBHC: Cell-based histogram comparison
