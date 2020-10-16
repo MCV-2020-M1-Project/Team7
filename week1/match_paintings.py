@@ -9,6 +9,7 @@ from evaluation.retrieval_evaluation import *
 from time import time
 from io_utils import *
 from debug_utils import *
+import numpy as np
 
 def parse_input_args():
     """ Parse program arguments """
@@ -65,7 +66,7 @@ def match_paintings(args):
 
     # If query set annotations are available, evaluate 
     # Evaluate painting mask
-    if len(qs_mask_list) > 0:
+    if len(qs_mask_list) > 0 and args.masking:
         pre, rec, acc, f1 = mask_metrics(masked_regions, qs_mask_list)
 
         print("Precision", pre)
@@ -74,7 +75,7 @@ def match_paintings(args):
         print("F1-measure", f1)
 
     # Evaluate painting matching
-    if len(qs_gts) > 0:
+    if type(qs_gts) == np.ndarray:
         qs_gts = qs_gts.reshape(len(qs_gts), 1)
         map_at_1 = mapk(qs_gts, assignments, k=1)
         map_at_5 = mapk(qs_gts, assignments, k=5)
