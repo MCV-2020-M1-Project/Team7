@@ -9,13 +9,15 @@ You can install these packages with pip using:
 `pip install requirements.txt`
 
 ## Instructions
-`python match\_paintings.py <path_to_db> (e.g., /home/sergio/MCV/M1/DB) <db_folder_name> (e.g., BBDD) <query_set_folder_name> (e.g., qsd1_w1) --masking <0 apply mask / 1 don't> -rm <name of the retrieval method> -mm <name of the masking method> --output_pkl <path to save pkl file with query assignments>        --output_mask <folder to save mask images>`
+`python match\_paintings.py <path_to_db> (e.g., /home/sergio/MCV/M1/DB) <db_folder_name> (e.g., BBDD) <query_set_folder_name> (e.g., qsd1_w1) --masking <0 apply mask / 1 don't remove background> -rm <name of the retrieval method> -mm <name of the masking method> --output_pkl <path to save pkl file with query assignments>        --output_mask <folder to save mask images>`
 
 ## List of methods
 <ul>
     <li> rm: [onedcelled, CBHC, twodcelled2, 1dhist, 2dhist]</li>
     <li> mm: [CBHS, PBM]</li>
 </ul>
+
+CBHC and onedcelled will only work if there is no masking method or CBHS is selected. It does not work with PBM because it does not preserve the 2D shape of the image.
 
 ## Notes
  - The folder should contain the database folder aswell as the query set. \
